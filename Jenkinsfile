@@ -24,7 +24,7 @@ pipeline{
             }
         }
         
-        stage('docker build){
+        stage('docker build'){
               steps{
                   script{
                     bat 'mvn dockerfile:build'   
