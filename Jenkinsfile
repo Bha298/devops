@@ -32,44 +32,7 @@ pipeline{
               }
         
         
-        stage('docker tag'){
-            steps{
-                script{
-                 bat "docker tag java/devops:0.0.1 bharadwaz/java/devops"   
-                }
-            }
-            
-        }
-          stage('docker logout'){
-              steps{
-                  script{
-                    bat 'docker logout'
-                  }
-              }
-              }
-            stage('docker login'){
-        
-        steps{
-            
-            script{
-             withCredentials([string(credentialsId: 'bharadwaz11', variable: 'bharadwaz1')]) {
-                 bat "docker login -u bharadwaz1 -p ${bharadwaz1}"
-}   
-            }
-            
-        }
-        
       
-        }
-           stage('docker push'){
-            steps{
-                script{
-                 bat "docker push bharadwaz1/java/devops"   
-                }
-            }
-            
-        }
-        
         
         
         
