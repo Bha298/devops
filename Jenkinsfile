@@ -20,7 +20,7 @@ pipeline{
         stage('docker build'){
               steps{
                   script{
-                    bat 'mvn clean build'
+                    bat 'mvn clean install'
                   }
               }
               }
