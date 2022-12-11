@@ -78,7 +78,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<repository>java/devops</repository>
+					<repository>devops</repository>
 					<tag>${project.version}</tag>
 					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 					<buildArgs>
