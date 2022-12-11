@@ -52,10 +52,10 @@ pipeline{
       
         }
         
-        stage('docker push'){
+        stage('docker tag'){
             steps{
                 script{
-                 bat "docker push docker push bharadwaz1/java:java/devops:0.0.1"   
+                 bat "docker build -t java/devops:tag_devops"   
                 }
             }
             
