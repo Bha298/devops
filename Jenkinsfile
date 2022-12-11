@@ -35,7 +35,7 @@ pipeline{
         stage('docker tag'){
             steps{
                 script{
-                 bat "docker tag java/devops:0.0.1 new_java/devops"   
+                 bat "docker tag java/devops:0.0.1 bharadwaz/java/devops"   
                 }
             }
             
@@ -64,7 +64,7 @@ pipeline{
            stage('docker push'){
             steps{
                 script{
-                 bat "docker push bharadwaz1/java:new_java/devops"   
+                 bat "docker push bharadwaz1/java/devops"   
                 }
             }
             
