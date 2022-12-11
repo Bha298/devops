@@ -48,7 +48,7 @@ pipeline{
         stage('docker push'){
             steps{
                 script{
-                 bat "docker push bharadwaz1/java/devops   
+                 bat "docker push java/devops"   
                 }
             }
             
