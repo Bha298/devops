@@ -30,6 +30,13 @@ pipeline{
                   }
               }
               }
+          stage('docker logout'){
+              steps{
+                  script{
+                    bat 'docker logout'
+                  }
+              }
+              }
             stage('docker login'){
         
         steps{
