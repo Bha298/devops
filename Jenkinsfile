@@ -20,7 +20,7 @@ pipeline{
         stage('docker build'){
               steps{
                   script{
-                    bat 'mvn clean install'
+                    bat 'mvn clean install -Dmaven.test.skip=true'
                   }
               }
               }
