@@ -55,7 +55,7 @@ pipeline{
         stage('docker tag'){
             steps{
                 script{
-                 bat "docker build -t java/devops:tag_devops"   
+                 bat "docker build -t java/devops:0.01"   
                 }
             }
             
