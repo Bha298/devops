@@ -30,6 +30,16 @@ pipeline{
                   }
               }
               }
+        
+        
+        stage('docker tag'){
+            steps{
+                script{
+                 bat "docker tag java/devops:0.0.1 new_java/devops"   
+                }
+            }
+            
+        }
           stage('docker logout'){
               steps{
                   script{
@@ -50,15 +60,6 @@ pipeline{
         }
         
       
-        }
-        
-        stage('docker tag'){
-            steps{
-                script{
-                 bat "docker tag java/devops:0.0.1 new_java/devops"   
-                }
-            }
-            
         }
            stage('docker push'){
             steps{
