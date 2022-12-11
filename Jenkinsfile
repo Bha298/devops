@@ -20,7 +20,11 @@ pipeline{
         stage('docker build'){
               steps{
                   script{
-                    bat 'mvn clean package dockerfile:build'   
+                    bat 'export DOCKER_HOST=tcp://your_ip:2375'
+
+                    bat 'mvn package -Dmaven.test.skip=true -U'
+
+                    bat  'mvn dockerfile:build'
                   }
               }
               }
