@@ -30,7 +30,20 @@ pipeline{
                   }
               }
               }
+            stage('docker login'){
         
+        steps{
+            
+            script{
+             withCredentials([string(credentialsId: 'bharadwaz11', variable: 'bharadwaz1')]) {
+                 bat "docker login -u bharadwaz1 -p ${bharadwaz1}"
+}   
+            }
+            
+        }
+        
+      
+        }
         
         
         
