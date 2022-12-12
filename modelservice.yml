@@ -1,21 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment 
 metadata:
-  name: spring-boot-k8s-deployment
+  name: devops-app
+  labels:
+    app: devops-app
 spec:
   selector:
     matchLabels:
-      app: spring-boot-k8s
+      app: devops-app
   replicas: 2 
   template:
     metadata:
       labels:
-        app: spring-boot-k8s
+        app: devops-app
     spec:
       containers:
-        - name: spring-boot-k8s
-          image: bharadwaz1/java:devops
-          imagePullPolicy: IfNotPresent
+        - name: devops-app
+          image: devops
+          imagePullPolicy: Always
           ports:
             - containerPort: 2001 
 
@@ -25,10 +27,10 @@ spec:
 apiVersion: v1 
 kind: Service 
 metadata: 
-  name: springboot-k8ssvc
+  name: devops-app
 spec:
   selector:
-    app: spring-boot-k8s
+    app: devops-app
   ports:
     - protocol: "TCP"
       port: 2001 
