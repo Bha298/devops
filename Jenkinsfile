@@ -70,6 +70,15 @@ pipeline{
             
         }
         
+         stage('kubernates'){
+            steps{
+                script{
+                 kubernetesDeploy (configs: 'modelservice.yml', kubeconfigId: 'kubernates')   
+                }
+            }
+            
+        }
+        
         
         
         
