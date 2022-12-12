@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment 
 metadata:
-  name: devops-app
+  name: model-app
   labels:
-    app: devops-app
+    app: model-app
 spec:
   selector:
     matchLabels:
-      app: devops-app
+      app: model-app
   replicas: 2 
   template:
     metadata:
       labels:
-        app: devops-app
+        app: model-app
     spec:
       containers:
-        - name: devops-app
+        - name: model-app
           image: devops
           imagePullPolicy: Always
           ports:
@@ -27,10 +27,10 @@ spec:
 apiVersion: v1 
 kind: Service 
 metadata: 
-  name: devops-app
+  name: model-app
 spec:
   selector:
-    app: devops-app
+    app: model-app
   ports:
     - protocol: "TCP"
       port: 2001 
